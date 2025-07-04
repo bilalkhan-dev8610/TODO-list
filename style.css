@@ -1,0 +1,360 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  width: 90%;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: radial-gradient(circle at top left,#ffb751, #d83838, #8d5aaf,#43f733, #258beb, #ce0f68);
+  /* background: #f7caca; */
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  /* animation: fadeIn 1s ease; */
+   color: #1d1d1d;
+    /* Existing styles... */
+  background-size: 300% 300%;
+  animation: colorfulBG 10s ease infinite;
+}
+
+@keyframes colorfulBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 12px 20px;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 16px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Make form fully responsive */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+button[type="submit"]:hover {
+  background: #00b894;
+  opacity: 0.9;
+}
+
+/* ✅ Responsive Fix for Small Screens */
+@media (max-width: 500px) {
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Task list styling */
+#taskList {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  animation: slideIn 1.0s ease;
+  gap: 10px;
+}
+
+.task span:first-child {
+  flex: 1 1 60%;
+  word-break: break-word;
+}
+
+.task.complete {
+  background: #dff9fb;
+  text-decoration: line-through;
+}
+
+/* Task buttons and badges */
+.task button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status.todo {
+  background-color: #ffeaa7;
+}
+
+.status.in-progress {
+  background-color: #fab1a0;
+}
+
+.status.complete {
+  background-color: #55efc4;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -------------------
+   Responsive Styling
+-------------------- */
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  button[type="submit"] {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task span:first-child {
+    width: 100%;
+  }
+
+  .task button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .status {
+    font-size: 0.8rem;
+  }
+}
+
+/* Toggle switch styles */
+.dark-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00b894;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+body.dark-mode {
+  background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+  color: #f1f1f1;
+}
+
+body.dark-mode .container {
+  background: #2f2f2f;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode input[type="text"] {
+  background: #3e3e3e;
+  color: #fff;
+  border: 2px solid #555;
+}
+
+body.dark-mode .task {
+  background: #444;
+  color: #f1f1f1;
+}
+
+body.dark-mode .task.complete {
+  background: #2e7d32;
+}
+
+body.dark-mode .status.todo {
+  background-color: #ffce91;
+}
+
+body.dark-mode .status.in-progress {
+  background-color: #ff9e80;
+}
+
+body.dark-mode .status.complete {
+  background-color: #80cbc4;
+}
+/* Slide & fade in animation */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide & fade out animation */
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.task {
+  animation: slideFadeIn 1.4s ease forwards;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide-out {
+  animation: slideFadeOut 0.5s forwards;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

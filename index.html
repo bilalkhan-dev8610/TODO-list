@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated TODO App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌈 TODO List</h1>
+    <p class="subtitle">Plan it. Do it. Love it. 💪</p>
+    <div class="dark-toggle">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle">
+    <span class="slider round"></span>
+  </label>
+</div>
+
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Enter task..." required />
+      <button type="submit">➕ Add Task</button>
+    </form>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
