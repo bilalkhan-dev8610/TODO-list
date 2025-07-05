@@ -1,5 +1,5 @@
 {
-  "name": "Colorful TODO List",
+  "name": "TODO List",
   "short_name": "TODO App",
   "start_url": "./index.html",
   "display": "standalone",
@@ -7,7 +7,7 @@
   "theme_color": "#fda085",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "icon-193.jpg",
       "sizes": "220x220",
       "type": "image/png"
     },
